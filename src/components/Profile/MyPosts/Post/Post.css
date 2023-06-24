@@ -1,0 +1,22 @@
+  .item-post{
+    margin: 10px 30px 80px;
+    color: rgb(186, 137, 137);
+  }
+
+   .item-post img {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: 0.5px solid black;
+   }
+
+   .icon img {
+    margin-top: 10px;
+    width: 25px;
+    height: 25px;
+    border: none;
+   }
+
+   
+   

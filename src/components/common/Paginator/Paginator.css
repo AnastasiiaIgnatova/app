@@ -1,0 +1,17 @@
+.selectedPage {
+    font-weight: bold;
+    margin-right: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+.page {
+    margin-right: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+.paginator {
+    height: 50px;
+    width: 100%;
+}

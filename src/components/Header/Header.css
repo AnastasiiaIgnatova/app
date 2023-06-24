@@ -1,0 +1,26 @@
+.header {
+    grid-area: h;
+    background-color:black;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  .header img {
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .login-block {
+    float: right;
+
+  }
+
+  .login-block a {
+    color: white;
+    text-decoration: none;
+  }
+
+  p {
+    color: aliceblue;
+  }

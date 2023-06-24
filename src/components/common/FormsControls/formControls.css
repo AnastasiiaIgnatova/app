@@ -1,0 +1,18 @@
+/* .form-control {
+
+} */
+
+.form-control.error input,
+.form-control.error textarea {
+border:solid red 2px;
+}
+
+.form-control.error span {
+    color: red;
+}
+
+.form-summery-error {
+    border: solid 3px red;
+    padding: 5px;
+    color: aqua;
+}
