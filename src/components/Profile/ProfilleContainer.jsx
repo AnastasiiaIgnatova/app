@@ -74,7 +74,7 @@ let mapDispatchToProps = (dispatch) => {
       dispatch(savePhoto(file));
     },
     saveProfile: (profile) => {
-      dispatch(saveProfile(profile));
+      return dispatch(saveProfile(profile));
     },
   };
 };

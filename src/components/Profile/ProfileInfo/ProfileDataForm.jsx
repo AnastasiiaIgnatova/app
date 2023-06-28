@@ -1,15 +1,22 @@
 import React from "react";
 import { reduxForm } from "redux-form";
-import {createField, Input, Textarea} from '../../common/FormsControls/FormsControls'
+import {createField, Input, Textarea} from '../../common/FormsControls/FormsControls';
+import './ProfileInfo.css';
 // import { Field } from "redux-form";
+import './ProfileInfo.css'
 
-const ProfileDataForm = ({handleSubmit }) => {
+const ProfileDataForm = ({handleSubmit, profile, error }) => {
     return(
         <form onSubmit={handleSubmit}>
         
           <div>
             <button> save </button>
           </div>
+
+          {error && <div className="form-summery-error">{error}</div>}
+      <div>
+        <button>Login</button>
+      </div>
         
         <div>
           <b>Full name</b>:
@@ -28,18 +35,16 @@ const ProfileDataForm = ({handleSubmit }) => {
           <b>About me</b>: 
           { createField ("About me", "aboutMe", Textarea, [])}
         </div>
-        {/* <div>
+        <div>
           <b>Contacts</b>:{" "}
           {Object.keys(profile.contacts).map((key) => {
             return (
-              <Contact
-                key={key}
-                contactTitle={key}
-                contactValue={profile.contacts[key]}
-              />
+              <div className="contact">
+                <b>{key}: { createField (key, "contacts." + key, Input, [])}</b>
+              </div>
             );
           })}
-        </div> */}
+        </div>
       </form>
     )
   };

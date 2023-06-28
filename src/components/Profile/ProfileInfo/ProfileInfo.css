@@ -4,4 +4,9 @@
 
 .contact {
     padding-left: 10px;
+    color: blue;
+}
+
+.form-summery-error {
+    border: 3px solid red;
 }

@@ -6,7 +6,14 @@ import userPhoto from "../../../assets/images/user.png";
 import ProfileDataForm from "./ProfileDataForm";
 import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
 
-const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, saveProfile }) => {
+const ProfileInfo = ({
+  profile,
+  status,
+  updateStatus,
+  isOwner,
+  savePhoto,
+  saveProfile,
+}) => {
   let [editMode, setEditMode] = useState(false);
 
   if (!profile) {
@@ -20,11 +27,9 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
   };
 
   const onSubmit = (formData) => {
-    // props.login(formData.email, formData.password, formData.rememberMe);
-    debugger;
-    saveProfile(formData);
-    console.log(formData);
-    setEditMode(false);
+    saveProfile(formData).then(() => {
+      setEditMode(false);
+    });
   };
 
   return (
@@ -33,7 +38,11 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
         <img src={profile.photos.large || userPhoto} />
         {isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
         {editMode ? (
-          <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
+          <ProfileDataForm
+            initialValues={profile}
+            profile={profile}
+            onSubmit={onSubmit}
+          />
         ) : (
           <ProfileData
             goToEditMode={() => {
@@ -86,7 +95,6 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
     </div>
   );
 };
-
 
 const Contact = ({ contactTitle, contactValue }) => {
   return (
